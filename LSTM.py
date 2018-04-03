@@ -24,12 +24,12 @@ def build_model(input_shape):
     model.add(Activation('relu'))
     model.add(Dropout(0.14))
 
-    model.add(Conv1D(filters=128, kernel_size=8, padding=MODEL_CONV_PADDING))
+    model.add(Conv1D(filters=128, kernel_size=7, padding=MODEL_CONV_PADDING))
     model.add(Activation('relu'))
     model.add(MaxPooling1D(pool_size=2))
     model.add(Dropout(0.18))
 
-    model.add(Conv1D(filters=128, kernel_size=5, padding=MODEL_CONV_PADDING))
+    model.add(Conv1D(filters=128, kernel_size=3, padding=MODEL_CONV_PADDING))
     model.add(Activation('relu'))
     model.add(MaxPooling1D(pool_size=2))
     model.add(Dropout(0.2))
@@ -39,11 +39,11 @@ def build_model(input_shape):
 
     model.add(Dense(1280))
     model.add(Activation('relu'))
-    model.add(Dropout(0.1))
+    model.add(Dropout(0.14))
 
     model.add(Dense(960))
     model.add(Activation('relu'))
-    model.add(Dropout(0.1))
+    model.add(Dropout(0.12))
 
     model.add(Dense(720))
     model.add(Activation('relu'))
